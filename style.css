@@ -1,0 +1,914 @@
+
+        /* --- 1. BRAND COLORS & VARIABLES --- */
+        :root {
+            --primary-blue: #003380; /* Deep Royal Blue */
+            --accent-gold: #FFC107;  /* Base Gold */
+            --gold-gradient: linear-gradient(135deg, #FFC107 0%, #FF9800 100%); /* Metallic Gold Look */
+            --highlight-teal: #00BCD4;
+            --text-light: #F4F4F4;
+            --text-dark: #333333;
+        }
+
+        /* --- 2. GLOBAL RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* --- 3. GLASSMORPHISM HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); /* Frosted Glass Effect */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Simulating the logo icon with CSS for the demo */
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--highlight-teal);
+            border-radius: 50%;
+            border: 3px solid var(--accent-gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        /* Teal underline animation on hover */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--highlight-teal);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn-nav {
+            padding: 10px 25px;
+            background: var(--gold-gradient);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .cta-btn-nav:hover {
+            transform: translateY(-2px);
+        }
+
+        /* --- 4. HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            /* Using a placeholder building image */
+            background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        /* The Dark Blue Overlay to make text readable and feel premium */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 51, 128, 0.9) 0%, rgba(0, 51, 128, 0.6) 60%, rgba(0, 51, 128, 0.2) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            color: white;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Luxurious Serif Font for Headline */
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--highlight-teal); /* Highlighting 'Coimbatore' or key words */
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 300;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 20px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Primary Hero Button (Gold) */
+        .btn-primary {
+            padding: 15px 40px;
+            background: var(--gold-gradient);
+            color: white;
+            border: none;
+            border-radius: 4px; /* Slight rounded corners for corporate feel */
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Secondary Hero Button (Outline) */
+        .btn-secondary {
+            padding: 15px 40px;
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+            border-color: white;
+        }
+
+        /* Simple animation for entrance */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            nav ul { display: none; /* Hidden for simple demo */ }
+            .hero h1 { font-size: 40px; }
+            .hero { padding: 0 20px; }
+            .hero-buttons { flex-direction: column; }
+        }
+
+
+
+
+        /* Section Container */
+    .benefits-section {
+        padding: 100px 50px;
+        background-color: #f8f9fa; /* Very light grey for contrast */
+        text-align: center;
+    }
+
+    /* Section Header Styling */
+    .section-header {
+        max-width: 800px;
+        margin: 0 auto 60px auto;
+    }
+
+    .section-header h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        color: var(--primary-blue);
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+    }
+
+    /* The Gold decorative line under the heading */
+    .section-header h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--accent-gold);
+        margin: 15px auto 0 auto;
+    }
+
+    .section-header p {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* The Grid Layout */
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* The Card Design */
+    .benefit-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft premium shadow */
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border-bottom: 3px solid transparent; /* Hidden border for hover effect */
+    }
+
+    /* Icon Styling */
+    .icon-box {
+        font-size: 40px;
+        color: var(--highlight-teal); /* Using the Teal from the logo */
+        margin-bottom: 25px;
+        transition: transform 0.3s ease;
+    }
+
+    .benefit-card h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        color: var(--primary-blue);
+        margin-bottom: 15px;
+    }
+
+    .benefit-card p {
+        font-size: 14px;
+        color: #777;
+        line-height: 1.6;
+    }
+
+    /* HOVER EFFECTS: The "Floating" Animation */
+    .benefit-card:hover {
+        transform: translateY(-10px); /* Lifts the card up */
+        box-shadow: 0 20px 40px rgba(0, 51, 128, 0.1); /* Blue-tinted shadow */
+        border-bottom: 3px solid var(--accent-gold); /* Gold border appears */
+    }
+
+    .benefit-card:hover .icon-box {
+        transform: scale(1.1); /* Icon grows slightly */
+    }
+
+    /* Mobile Adjustment */
+    @media (max-width: 768px) {
+        .benefits-section { padding: 60px 20px; }
+        .section-header h2 { font-size: 32px; }
+    }
+
+
+
+
+    .about-section {
+        padding: 100px 50px;
+        background-color: #fff; /* White background for clean contrast */
+        overflow: hidden; /* Ensures decorative elements don't spill out */
+    }
+
+    .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center; /* Vertically centers text with image */
+        gap: 60px; /* Space between text and image */
+    }
+
+    /* -- Left Side: Text Content -- */
+    .about-text {
+        flex: 1; /* Takes up 50% space */
+    }
+
+    .sub-heading {
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--highlight-teal);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+
+    .about-text h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        color: var(--primary-blue);
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+
+    /* The block with the Teal accent line */
+    .text-block-accent {
+        border-left: 4px solid var(--highlight-teal);
+        padding-left: 25px;
+        margin-bottom: 30px;
+    }
+
+    .text-block-accent p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    /* A subtle "Read More" link */
+    .btn-text-arrow {
+        text-decoration: none;
+        color: var(--primary-blue);
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: gap 0.3s ease;
+    }
+
+    .btn-text-arrow:hover {
+        gap: 15px;
+        color: var(--accent-gold);
+    }
+
+    /* -- Right Side: Image & Gold Frame -- */
+    .about-image-wrapper {
+        flex: 1; /* Takes up 50% space */
+        position: relative;
+        /* Minimal height for mobile view */
+        min-height: 400px; 
+    }
+
+    /* The actual image */
+    .main-image {
+        width: 90%;
+        height: auto;
+        position: relative;
+        z-index: 2; /* sits above the gold frame */
+        border-radius: 4px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        /* Using object-fit to ensure the image fills its space well */
+        aspect-ratio: 4/5; 
+        object-fit: cover;
+    }
+
+    /* The decorative Gold Offset Frame */
+    .gold-frame-offset {
+        position: absolute;
+        top: 30px; /* Shifted down */
+        left: 30px; /* Shifted right */
+        width: 90%;
+        height: 100%;
+        border: 3px solid var(--accent-gold);
+        z-index: 1; /* Sits behind the image */
+        border-radius: 4px;
+    }
+
+    /* -- Mobile Responsiveness -- */
+    @media (max-width: 968px) {
+        .about-container {
+            flex-direction: column; /* Stack them vertically on small screens */
+            gap: 40px;
+        }
+        .about-image-wrapper {
+            width: 100%;
+            min-height: auto;
+            display: flex;
+            justify-content: center; /* Center image on mobile */
+        }
+        .main-image, .gold-frame-offset {
+            width: 80%; /* Slightly smaller on mobile */
+        }
+        .about-text h2 { font-size: 32px; }
+    }
+
+
+      
+
+
+    .events-section {
+        padding: 100px 50px;
+        background-color: var(--primary-blue); /* Dark Blue Background */
+        color: white;
+    }
+
+    .events-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        max-width: 1200px;
+        margin: 0 auto 50px auto;
+    }
+
+    .events-header h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        color: white;
+    }
+
+    /* A fancy link to view all events */
+    .view-all-link {
+        color: var(--accent-gold);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-bottom: 1px solid var(--accent-gold);
+        padding-bottom: 5px;
+        transition: all 0.3s;
+    }
+
+    .view-all-link:hover {
+        color: white;
+        border-color: white;
+    }
+
+    /* -- Horizontal Scroller Container -- */
+    .events-scroller {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto; /* Enables horizontal scrolling */
+        padding-bottom: 40px; /* Space for scrollbar/shadow */
+        scroll-snap-type: x mandatory; /* Makes cards snap into place */
+        max-width: 1200px;
+        margin: 0 auto;
+        
+        /* Hide Scrollbar for Chrome/Safari/Opera */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .events-scroller::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* -- Event Card Design -- */
+    .event-card {
+        min-width: 350px; /* Fixed width for cards */
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        scroll-snap-align: start; /* Snapping point */
+        transition: transform 0.3s ease;
+    }
+
+    .event-card:hover {
+        transform: translateY(-10px); /* Lifts up on hover */
+    }
+
+    .event-image-box {
+        height: 200px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .event-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    /* Zoom effect on image hover */
+    .event-card:hover .event-image-box img {
+        transform: scale(1.1);
+    }
+
+    /* Gold Date Badge */
+    .date-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--gold-gradient);
+        color: var(--primary-blue);
+        padding: 10px 15px;
+        text-align: center;
+        border-radius: 4px;
+        font-weight: 800;
+        line-height: 1.2;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 10;
+    }
+
+    .date-badge span {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .event-details {
+        padding: 25px;
+    }
+
+    .event-category {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--highlight-teal);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .event-details h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        color: var(--primary-blue);
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .event-link {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+        transition: color 0.2s;
+    }
+
+    .event-link:hover {
+        color: var(--primary-blue);
+    }
+
+    /* Arrow icon color */
+    .event-link i {
+        color: var(--accent-gold);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .events-section { padding: 60px 20px; }
+        .events-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+        .event-card { min-width: 280px; }
+    }
+
+
+
+    .team-section {
+        padding: 100px 50px;
+        background-color: #fff;
+        position: relative;
+        text-align: center;
+    }
+
+    /* Subtle Geometric Dotted Pattern Background */
+    .team-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Creates a subtle dot matrix pattern */
+        background-image: radial-gradient(var(--highlight-teal) 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.1; /* Very faint */
+        pointer-events: none;
+    }
+
+    .team-header {
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .team-header h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        color: var(--primary-blue);
+    }
+
+    .team-header p {
+        color: #777;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .team-member {
+        transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Circular Image Styling */
+    .member-img-wrapper {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 25px auto;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid #f0f0f0; /* Light grey border default */
+        position: relative;
+        transition: all 0.4s ease;
+    }
+
+    .member-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* THE EFFECT: Grayscale by default */
+        filter: grayscale(100%);
+        transition: all 0.4s ease;
+    }
+
+    /* Hover State: Color + Gold Border */
+    .team-member:hover .member-img-wrapper {
+        border-color: var(--accent-gold);
+        box-shadow: 0 0 20px rgba(255, 193, 7, 0.3); /* Gold Glow */
+    }
+
+    .team-member:hover .member-img-wrapper img {
+        filter: grayscale(0%); /* Returns to color */
+        transform: scale(1.05);
+    }
+
+    /* Typography */
+    .member-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        color: var(--primary-blue);
+        margin-bottom: 5px;
+    }
+
+    .member-role {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent-gold); /* Gold text for title */
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    /* Social Icons */
+    .member-social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        opacity: 0; /* Hidden by default */
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+    }
+
+    .member-social a {
+        color: #ccc;
+        font-size: 18px;
+        transition: color 0.3s;
+    }
+
+    .member-social a:hover {
+        color: var(--highlight-teal);
+    }
+
+    /* Show icons on hover */
+    .team-member:hover .member-social {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        .team-section { padding: 60px 20px; }
+        /* Always show social icons on mobile since there is no hover */
+        .member-social { opacity: 1; transform: translateY(0); margin-top: 10px; } 
+    }
+
+
+    .site-footer {
+        background-color: #001a33; /* Very Dark Navy */
+        color: #b3b3b3; /* Light grey text for readability */
+        padding-top: 80px;
+        position: relative;
+        font-size: 14px;
+    }
+
+    /* A decorative gradient line at the top of the footer */
+    .site-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--primary-blue) 0%, var(--highlight-teal) 50%, var(--accent-gold) 100%);
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 Columns */
+        gap: 40px;
+        padding: 0 50px 60px 50px;
+    }
+
+    /* Column Headers */
+    .footer-col h4 {
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    /* -- Brand Column -- */
+    .footer-brand p {
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .footer-logo-text {
+        font-size: 24px;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 15px;
+        display: block;
+        letter-spacing: 2px;
+    }
+
+    /* -- Links Column -- */
+    .footer-links ul {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: #b3b3b3;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* Hover Effect: Text turns White, Arrow turns Teal */
+    .footer-links a:hover {
+        color: white;
+        padding-left: 5px; /* Slight slide right */
+    }
+    
+    .footer-links a:hover i {
+        color: var(--highlight-teal);
+    }
+
+    /* -- Contact Column -- */
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .contact-icon {
+        color: var(--accent-gold); /* Gold Icons */
+        font-size: 18px;
+        margin-top: 3px;
+    }
+
+    .contact-text {
+        line-height: 1.6;
+    }
+
+    /* -- Newsletter Column -- */
+    .newsletter-box {
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .newsletter-input {
+        width: 100%;
+        padding: 15px;
+        background: rgba(255,255,255,0.05); /* Transparent grey */
+        border: 1px solid rgba(255,255,255,0.1);
+        color: white;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    .newsletter-input:focus {
+        border-color: var(--highlight-teal);
+    }
+
+    .newsletter-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50px;
+        background: var(--accent-gold);
+        border: none;
+        color: var(--primary-blue);
+        cursor: pointer;
+        border-radius: 0 4px 4px 0;
+        transition: background 0.3s;
+    }
+
+    .newsletter-btn:hover {
+        background: white;
+    }
+
+    /* -- Bottom Copyright Bar -- */
+    .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.05);
+        padding: 25px 50px;
+        text-align: center;
+        background-color: #001122; /* Slightly darker than main footer */
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        opacity: 0.6;
+    }
+    
+    .footer-bottom span {
+        color: var(--highlight-teal);
+    }
+
+    @media (max-width: 768px) {
+        .footer-container { grid-template-columns: 1fr; gap: 30px; padding: 0 20px 40px 20px; }
+        .site-footer { padding-top: 40px; }
+    }
