@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Workshops | COAREA - Official NAR India Chapter</title>
+    <link rel="icon" href="assets/favicon.PNG" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Additional styles specific to the events page can be added here */
+        /* --- EVENTS PAGE SPECIFICS --- */
+        /* --- EVENTS PAGE STYLING --- */
+.sub-hero-events {
+    height: 50vh;
+    background: linear-gradient(rgba(0, 26, 51, 0.7), rgba(0, 26, 51, 0.9)), 
+                url('https://images.unsplash.com/photo-1540575861501-7ad060e39fe1?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.events-listing {
+    padding: 100px 5%;
+    background: #fff;
+}
+
+.events-grid-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.event-strip {
+    display: flex;
+    align-items: center;
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.event-strip:hover {
+    transform: translateX(10px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.event-strip.highlight {
+    border-left: 5px solid var(--accent-gold);
+}
+
+.event-date-box {
+    text-align: center;
+    padding-right: 40px;
+    border-right: 1px solid #ddd;
+    min-width: 120px;
+}
+
+.event-date-box .day {
+    display: block;
+    font-size: 42px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-blue);
+    line-height: 1;
+}
+
+.event-date-box .month {
+    font-weight: 600;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+}
+
+.event-content {
+    flex: 1;
+    padding: 0 40px;
+}
+
+.event-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #999;
+}
+
+.event-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin: 10px 0;
+}
+
+.event-meta {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #666;
+}
+
+.event-meta span { margin-right: 20px; }
+.event-meta i { color: var(--accent-gold); margin-right: 8px; }
+
+@media (max-width: 992px) {
+    .event-strip {
+        flex-direction: column;
+        text-align: center;
+    }
+    .event-date-box {
+        padding: 0 0 20px 0;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+    .event-cta { margin-top: 25px; }
+}
+</style>
+</head>
+<body>
+
+            <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="COAREA Logo" class="logo-img">
+                </a>
+            </div>
+                <nav class="premium-nav">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="index.html" class="nav-item">
+                                <span class="nav-text">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="nav-item">
+                                <span class="nav-text">About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="teams.html" class="nav-item">
+                                <span class="nav-text">Members</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="events.html" class="nav-item active">
+                                <span class="nav-text">Events</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="nav-item">
+                                <span class="nav-text">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="cta-btn-nav">
+                    <span>Join the Network</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+        </header>
+
+    <section class="sub-hero-events">
+        <div class="hero-event"></div>
+        <div class="container">
+            <span class="hero-badge">Knowledge & Innovation</span>
+            <h1>Events That Shape the <span>Future</span></h1>
+            <p>Empowering real estate professionals through exclusive networking and skill development[cite: 32].</p>
+        </div>
+    </section>
+
+    <section class="events-listing">
+        <div class="container">
+            
+            <div class="events-grid-header">
+                <h2>Upcoming Opportunities</h2>
+                <p>Stay ahead with training in RERA regulations, digital marketing, and industry laws[cite: 35, 36, 37].</p>
+            </div>
+
+            <div class="event-strip highlight">
+                <div class="event-date-box">
+                    <span class="day">15</span>
+                    <span class="month">MAR</span>
+                </div>
+                <div class="event-content">
+                    <span class="event-tag">Networking</span>
+                    <h3>“Let’s Connect” with Grade ‘A’ Developers [cite: 39]</h3>
+                    <p>Direct access to project opportunities and strategic partnerships with industry leaders[cite: 41].</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Coimbatore</span>
+                        <span><i class="fas fa-clock"></i> 06:00 PM</span>
+                    </div>
+                </div>
+                <div class="event-cta">
+                    <a href="#" class="btn-primary">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-strip">
+                <div class="event-date-box">
+                    <span class="day">22</span>
+                    <span class="month">APR</span>
+                </div>
+                <div class="event-content">
+                    <span class="event-tag">Training</span>
+                    <h3>RERA Compliance & Real Estate Laws [cite: 35, 36]</h3>
+                    <p>Mastering the latest regulatory requirements to ensure ethical and transparent transactions[cite: 23, 27].</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Virtual Workshop</span>
+                        <span><i class="fas fa-clock"></i> 10:30 AM</span>
+                    </div>
+                </div>
+                <div class="event-cta">
+                    <a href="#" class="btn-outline">View Details</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    </body>
+</html>

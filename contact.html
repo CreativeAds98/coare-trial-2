@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | COAREA - Official NAR India Chapter</title>
+    <link rel="icon" href="assets/favicon.PNG" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Additional styles specific to the contact page can be added here */
+        /* --- CONTACT PAGE SPECIFICS --- */
+
+        /* --- CONTACT PAGE STYLING --- */
+.contact-section {
+    padding: 100px 5%;
+    background-color: #fff;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.info-box {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-box i {
+    font-size: 20px;
+    color: var(--accent-gold);
+    margin-top: 5px;
+}
+
+.info-box h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+/* Premium Form Styling */
+.premium-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.premium-form input, 
+.premium-form select, 
+.premium-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #eee;
+    background: #fcfcfc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.premium-form input:focus {
+    border-color: var(--accent-gold);
+    outline: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+            <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="COAREA Logo" class="logo-img">
+                </a>
+            </div>
+                <nav class="premium-nav">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="index.html" class="nav-item">
+                                <span class="nav-text">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="nav-item">
+                                <span class="nav-text">About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="teams.html" class="nav-item">
+                                <span class="nav-text">Members</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="events.html" class="nav-item">
+                                <span class="nav-text">Events</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="nav-item active">
+                                <span class="nav-text">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="cta-btn-nav">
+                    <span>Join the Network</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+        </header>
+
+    <section class="sub-hero-contact">
+        <div class="hero-contact"></div>
+        <div class="container">
+            <span class="hero-badge">Get in Touch</span>
+            <h1>A Unified Voice for <span>Realtors</span></h1>
+            <p>Providing structured support across Coimbatore, Tirupur, Nilgiris, Erode, and Salem.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <div class="contact-details">
+                    <h2 style="font-family:'Playfair Display'; font-size: 2.5rem; color: var(--primary-blue);">Connect With Us</h2>
+                    <p style="margin-bottom: 40px; color: #666;">COAREA exists to bridge the gap in broker representation and provide a credible network for professionals[cite: 13, 18].</p>
+                    
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Hub</h4>
+                            <p>123, Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu 641004.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Official Email</h4>
+                            <p>support@coarea.org</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Membership Support</h4>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="premium-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <input type="text" placeholder="TNRERA Registration Number (Optional)">
+                        <select required>
+                            <option value="" disabled selected>Select Inquiry Type</option>
+                            <option value="membership">Membership Inquiry</option>
+                            <option value="grievance">Grievance Cell </option>
+                            <option value="event">Event Registration</option>
+                        </select>
+                        <textarea rows="5" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    </body>
+</html>

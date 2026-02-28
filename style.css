@@ -38,87 +38,159 @@
             transition: all 0.3s ease;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--primary-blue);
-            letter-spacing: 1px;
+        .logo a {
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
+
+        .logo-img {
+            height: 60px; /* Adjust based on your logo's height */
+            width: auto;
+            object-fit: contain;
+            /* Optional: filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1)); */
+        }
+
+
+
+        /* Hover effect for the brand */
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+/* --- ARCHITECTURAL NAV STYLING --- */
+.premium-nav {
+    margin-right: 40px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+/* Numeric indicators for a structured look */
+.nav-number {
+    font-size: 9px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--accent-gold);
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.nav-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Floating underline effect */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-blue);
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-item:hover .nav-text {
+    color: var(--accent-gold);
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+    background: var(--accent-gold);
+}
+
+/* --- CTA BUTTON REDESIGN --- */
+.cta-btn-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 28px;
+    background: var(--primary-blue);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 2px; /* Sharper corners for a corporate feel */
+    transition: all 0.3s ease;
+    box-shadow: 6px 6px 0px var(--accent-gold); /* Architectural offset shadow */
+}
+
+.cta-btn-nav:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0px var(--accent-gold);
+}
         
-        /* Simulating the logo icon with CSS for the demo */
-        .logo-icon {
-            width: 30px;
-            height: 30px;
-            background: var(--highlight-teal);
-            border-radius: 50%;
-            border: 3px solid var(--accent-gold);
-        }
+/* =========================================================================================================
+   THE MAIN INDEX PAGE CONTENT STYLES START HERE
+   ========================================================================================================= */
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
 
-        nav a {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 500;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            transition: color 0.3s;
-        }
 
-        /* Teal underline animation on hover */
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--highlight-teal);
-            transition: width 0.3s;
-        }
+/* ===================================
+   04. HERO SECTION
+   =================================== */
 
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .cta-btn-nav {
-            padding: 10px 25px;
-            background: var(--gold-gradient);
-            color: #fff;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
-            transition: transform 0.2s;
-        }
-
-        .cta-btn-nav:hover {
-            transform: translateY(-2px);
-        }
-
-        /* --- 4. HERO SECTION --- */
         .hero {
             height: 100vh;
             width: 100%;
-            /* Using a placeholder building image */
-            background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover;
-            background-position: center;
             position: relative;
             display: flex;
             align-items: center;
             padding: 0 50px;
+            overflow: hidden;
         }
+
+        /* The Sliding Background Logic */
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-size: cover;
+            background-position: center;
+            /* Duration: 15 seconds, infinite loop */
+            animation: heroSlider 15s infinite; 
+        }
+
+        @keyframes heroSlider {
+            0%, 30% {
+                background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');
+            }
+            33%, 63% {
+                background-image: url('https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?q=80&w=2070');
+            }
+            66%, 100% {
+                background-image: url('https://images.unsplash.com/photo-1503387762-592dee58c460?q=80&w=2070');
+            }
+        }
+
 
         /* The Dark Blue Overlay to make text readable and feel premium */
         .hero-overlay {
@@ -219,6 +291,8 @@
             .hero { padding: 0 20px; }
             .hero-buttons { flex-direction: column; }
         }
+
+
 
 
 
@@ -912,3 +986,51 @@
         .footer-container { grid-template-columns: 1fr; gap: 30px; padding: 0 20px 40px 20px; }
         .site-footer { padding-top: 40px; }
     }
+
+
+
+
+
+    /* --- SECTION LOADING ANIMATIONS --- */
+
+/* The initial state: hidden and shifted */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth architectural motion */
+}
+
+/* The active state: visible and in position */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific delay for cards within a section (staggered effect) */
+.benefits-grid .benefit-card,
+.team-grid .team-member,
+.event-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.reveal.active .benefit-card,
+.reveal.active .team-member,
+.reveal.active .event-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Adding staggered delays to children */
+.reveal.active .benefit-card:nth-child(2),
+.reveal.active .team-member:nth-child(2),
+.reveal.active .event-card:nth-child(2) { transition-delay: 0.2s; }
+
+.reveal.active .benefit-card:nth-child(3),
+.reveal.active .team-member:nth-child(3),
+.reveal.active .event-card:nth-child(3) { transition-delay: 0.4s; }
+
+    /* =========================================================================================================
+   THE MAIN INDEX PAGE CONTENT STYLES START HERE
+   ========================================================================================================= */

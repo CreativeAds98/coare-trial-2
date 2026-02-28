@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | COAREA - Official NAR India Chapter</title>
+    <link rel="icon" href="assets/favicon.PNG" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to the about page can be added here */
+        /* --- ABOUT PAGE SPECIFICS --- */
+.sub-hero {
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: 80px; /* Offset for fixed header */
+}
+
+.about-detail {
+    padding: 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.about-text p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.about-image-container {
+    position: relative;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.about-image-container img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.about-image-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    border: 10px solid var(--accent-gold);
+    border-radius: 12px;
+    z-index: 1;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .about-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about-image-container {
+        padding: 0;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .sub-hero h1 {
+        font-size: 2.2rem;
+        padding: 0 15px;
+    }
+    
+    .about-detail {
+        padding: 60px 20px;
+    }
+}
+    </style>
+</head>
+<body>
+
+
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="COAREA Logo" class="logo-img">
+                </a>
+            </div>
+                <nav class="premium-nav">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="index.html" class="nav-item">
+                                <span class="nav-text">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="nav-item  active">
+                                <span class="nav-text">About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="teams.html" class="nav-item">
+                                <span class="nav-text">Members</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="events.html" class="nav-item">
+                                <span class="nav-text">Events</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="nav-item">
+                                <span class="nav-text">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="cta-btn-nav">
+                    <span>Join the Network</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+        </header>
+
+
+
+<section class="sub-hero" style="background: linear-gradient(rgba(0,51,128,0.8), rgba(0,26,51,0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069');">
+    <div>
+        <h1>Our Story & Mission</h1>
+        <p style="letter-spacing: 2px; text-transform:uppercase; font-size: 14px; color:var(--accent-gold); font-weight: 600;">The Definitive Voice of Coimbatore Real Estate</p>
+    </div>
+</section>
+
+<section class="about-detail">
+    <div class="about-grid">
+        <div class="about-text">
+            <h2>Setting the Blueprint for Excellence.</h2>
+            <p>
+                The Coimbatore Association of Realtors (COAREA) is a not-for-profit professional body dedicated to empowering, representing, and elevating real estate professionals across <strong>Coimbatore, Tirupur, Nilgiris, Erode, Salem, and neighbouring regions</strong>. 
+            </p>
+            <p>
+                As the <strong>official Coimbatore Chapter of NAR India</strong>, we are part of the apex national organization representing the interests of real estate professionals across the country.
+            </p>
+            <p>
+                From just <strong>4 founding members</strong>, COAREA has grown into a prestigious body of <strong>50+ TNRERA-registered professionals</strong>, making it one of the most credible networks in the region.
+            </p>
+        </div>
+        <div class="about-image-container">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070" alt="COAREA Professionalism">
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Board | COAREA - Official NAR India Chapter</title>
+    <link rel="icon" href="assets/favicon.PNG" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Additional styles specific to the teams page can be added here */
+        /* --- TEAMS PAGE SPECIFICS --- */
+        /* --- LEADERSHIP PAGE STYLING --- */
+.sub-hero-team {
+    height: 50vh;
+    background: linear-gradient(rgba(0, 26, 51, 0.8), rgba(0, 26, 51, 0.9)), 
+                url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.team-governance {
+    padding: 100px 5%;
+    background: #fff;
+}
+
+.grid-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.grid-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+}
+
+.leader-card {
+    background: #fcfcfc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid #eee;
+}
+
+.leader-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.leader-img {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.leader-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+}
+
+.leader-card:hover .leader-img img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.leader-overlay {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, var(--primary-blue));
+    display: flex;
+    justify-content: center;
+    transition: 0.4s ease;
+}
+
+.leader-card:hover .leader-overlay {
+    bottom: 0;
+}
+
+.leader-details {
+    padding: 25px;
+    text-align: center;
+}
+
+.leader-details h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.leader-details .role {
+    display: block;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Leadership Values Section */
+.leadership-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.value-item i {
+    font-size: 30px;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+}
+
+.value-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .leadership-values {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="COAREA Logo" class="logo-img">
+                </a>
+            </div>
+                <nav class="premium-nav">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="index.html" class="nav-item">
+                                <span class="nav-text">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="nav-item">
+                                <span class="nav-text">About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="teams.html" class="nav-item active">
+                                <span class="nav-text">Members</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="events.html" class="nav-item">
+                                <span class="nav-text">Events</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="nav-item">
+                                <span class="nav-text">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="cta-btn-nav">
+                    <span>Join the Network</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+        </header>
+
+    <section class="sub-hero-team">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <span class="hero-badge">Expertise & Integrity</span>
+            <h1>Leadership that Drives <span>Excellence</span></h1>
+            <p>Guided by a governing body with over a decade of industry expertise, ensuring strategic vision and professional alignment.</p>
+        </div>
+    </section>
+
+    <section class="team-governance">
+        <div class="container">
+            <div class="grid-header">
+                <h2>Governing Body & Executive Committee</h2>
+                <p>Our leaders promote transparency and accountability across the Coimbatore real estate landscape.</p>
+            </div>
+
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974" alt="President">
+                        <div class="leader-overlay">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-details">
+                        <h3>Mr. Rajesh Kannan</h3>
+                        <span class="role">President</span>
+                        <p>Specialist in TNRERA-registered consultancy and regional market insights.</p>
+                    </div>
+                </div>
+
+   <div class="leader-card">
+                    <div class="leader-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976" alt="Secretary">
+                        <div class="leader-overlay">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-details">
+                        <h3>Mrs. Anitha Raj</h3>
+                        <span class="role">Secretary</span>
+                        <p>Driving professional governance and industry alignment for long-term growth.</p>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974" alt="Treasurer">
+                        <div class="leader-overlay">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="leader-details">
+                        <h3>Mr. Senthil Kumar</h3>
+                        <span class="role">Treasurer</span>
+                        <p>Ensuring transparency and accountability in all association financial operations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leadership-values">
+                <div class="value-item">
+                    <i class="fas fa-eye"></i>
+                    <h4>Strategic Vision</h4>
+                    <p>Guiding the community toward a sustainable real estate ecosystem[cite: 20, 59].</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Accountability</h4>
+                    <p>Maintaining high standards of professional governance and transparency.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Industry Expertise</h4>
+                    <p>Leveraging decades of knowledge to navigate the evolving landscape[cite: 56, 64].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </body>
+</html>
