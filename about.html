@@ -162,6 +162,85 @@
             .about-text h2 { font-size: 2.2rem; }
             .about-image-container { max-width: 600px; margin: 0 auto; }
         }
+
+
+
+                /* --- UNIVERSAL RESPONSIVE RESET --- */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* --- JOURNEY & GRID RESPONSIVENESS --- */
+        @media (max-width: 992px) {
+            /* Force grids to single column */
+            .about-grid, 
+            .journey-wrapper {
+                grid-template-columns: 1fr !important;
+                display: flex !important;
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            /* Center images and remove right-side offsets */
+            .about-image-container,
+            .journey-image-container {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+                max-width: 100%;
+                margin: 0 auto;
+                order: 1; /* Puts image on top */
+            }
+
+            .about-text,
+            .journey-text {
+                order: 2; /* Puts text below image */
+                text-align: center;
+            }
+
+            /* Adjust the Gold Border Backdrop for Mobile */
+            .about-image-container::after,
+            .journey-image-container::after {
+                width: 90%;
+                height: 90%;
+                bottom: -10px;
+                right: -10px;
+                border-width: 6px; /* Thinner border for smaller screens */
+            }
+
+            /* Values Grid Adjustment */
+            .value-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            /* Mission Flex Adjustments */
+            .mission-flex {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* --- MOBILE SPECIFIC TYPOGRAPHY --- */
+        @media (max-width: 600px) {
+            .section-padding {
+                padding: 50px 20px;
+            }
+
+            .about-text h2, 
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .sub-hero {
+                height: 35vh;
+                margin-top: 70px; /* Adjusted for smaller mobile header */
+            }
+
+            .sub-hero h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
