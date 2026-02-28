@@ -9,178 +9,306 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional styles specific to the about page can be added here */
         /* --- ABOUT PAGE SPECIFICS --- */
-.sub-hero {
-    height: 45vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    margin-top: 80px; /* Offset for fixed header */
-}
+        :root {
+            --primary-blue: #003380;
+            --dark-blue: #001a33;
+            --accent-gold: #d4af37;
+            --text-gray: #555;
+            --light-bg: #f9f9f9;
+        }
 
-.about-detail {
-    padding: 100px 5%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
+        .sub-hero {
+            height: 45vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-top: 80px;
+        }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
+        .section-padding {
+            padding: 80px 5%;
+        }
 
-.about-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: var(--primary-blue);
-    margin-bottom: 25px;
-    line-height: 1.2;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.about-text p {
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
-    font-size: 1.05rem;
-}
+        .about-detail {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-.about-image-container {
-    position: relative;
-    padding-right: 20px;
-    padding-bottom: 20px;
-}
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
 
-.about-image-container img {
-    width: 100%;
-    border-radius: 12px;
-    display: block;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
+        .about-text h2, .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
 
-.about-image-container::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 80%;
-    height: 80%;
-    border: 10px solid var(--accent-gold);
-    border-radius: 12px;
-    z-index: 1;
-}
+        .about-text p, .section-p {
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
 
-/* --- RESPONSIVE BREAKPOINTS --- */
-@media (max-width: 992px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    
-    .about-text h2 {
-        font-size: 2.2rem;
-    }
-    
-    .about-image-container {
-        padding: 0;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-}
+        .about-image-container {
+            position: relative;
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
 
-@media (max-width: 600px) {
-    .sub-hero h1 {
-        font-size: 2.2rem;
-        padding: 0 15px;
-    }
-    
-    .about-detail {
-        padding: 60px 20px;
-    }
-}
+        .about-image-container img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .about-image-container::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80%;
+            height: 80%;
+            border: 10px solid var(--accent-gold);
+            border-radius: 12px;
+            z-index: 1;
+        }
+
+        /* Value Cards */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--accent-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover { transform: translateY(-10px); }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        /* Mission Section */
+        .bg-navy { background: var(--dark-blue); color: white; }
+        .bg-navy .section-title { color: white; }
+        .bg-navy p { color: #ccc; }
+
+        .mission-flex {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .mission-box {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .mission-box ul { list-style: none; padding: 0; }
+        .mission-box ul li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .mission-box ul li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-grid { grid-template-columns: 1fr; gap: 50px; }
+            .about-text h2 { font-size: 2.2rem; }
+            .about-image-container { max-width: 600px; margin: 0 auto; }
+        }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="COAREA Logo" class="logo-img">
+            </a>
+        </div>
+        <nav class="premium-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-item"><span class="nav-text">Home</span></a></li>
+                <li><a href="about.html" class="nav-item active"><span class="nav-text">About Us</span></a></li>
+                <li><a href="teams.html" class="nav-item"><span class="nav-text">Members</span></a></li>
+                <li><a href="events.html" class="nav-item"><span class="nav-text">Events</span></a></li>
+                <li><a href="contact.html" class="nav-item"><span class="nav-text">Contact</span></a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="cta-btn-nav">
+            <span>Join the Network</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </header>
 
-        <header>
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/logo.png" alt="COAREA Logo" class="logo-img">
-                </a>
+    <section class="sub-hero" style="background: linear-gradient(rgba(0,51,128,0.8), rgba(0,26,51,0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069');">
+        <div>
+            <h1>About COAREA</h1>
+            <p style="letter-spacing: 2px; text-transform:uppercase; font-size: 14px; color:var(--accent-gold); font-weight: 600;">The Official Coimbatore Chapter of NAR India</p>
+        </div>
+    </section>
+
+    <section class="about-detail">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Setting the Blueprint for Excellence.</h2>
+                <p>
+                    The <strong>Coimbatore Association of Realtors (COAREA)</strong> is a not-for-profit professional body dedicated to empowering, representing, and elevating real estate professionals across Coimbatore, Tirupur, Nilgiris, Erode, Salem, and neighbouring regions.
+                </p>
+                <p>
+                    COAREA functions as the official Coimbatore Chapter of <strong>NAR India</strong> (National Association of Realtors – India), the apex national organization representing the interests of real estate professionals across the country.
+                </p>
             </div>
-                <nav class="premium-nav">
-                    <ul class="nav-list">
-                        <li>
-                            <a href="index.html" class="nav-item">
-                                <span class="nav-text">Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="about.html" class="nav-item  active">
-                                <span class="nav-text">About Us</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="teams.html" class="nav-item">
-                                <span class="nav-text">Members</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="events.html" class="nav-item">
-                                <span class="nav-text">Events</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="nav-item">
-                                <span class="nav-text">Contact</span>
-                            </a>
-                        </li>
+            <div class="about-image-container">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070" alt="COAREA Professionalism">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: #f4f7fa;">
+        <div class="container">
+            <h2 class="section-title text-center" style="text-align: center;">Why Realtors Matter</h2>
+            <p class="section-p text-center" style="text-align: center; max-width: 800px; margin: 0 auto 50px;">Real estate transactions are among the most significant financial decisions individuals and businesses make. Professional realtors play a critical role in ensuring success.</p>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Ethics & Transparency</h4>
+                    <p>Ensuring every transaction is fair, documented, and honest.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Market Insight</h4>
+                    <p>Accurate market data and pricing guidance for better decisions.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-shield-halved"></i>
+                    <h4>Legal Compliance</h4>
+                    <p>Navigating the complex world of RERA and regulatory requirements.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h4>Risk Mitigation</h4>
+                    <p>Protecting the interests of buyers, sellers, and investors alike.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container">
+        <div class="about-grid" style="grid-template-columns: 1fr 1fr;">
+             <div class="about-image-container" style="padding-right: 0; padding-left: 20px;">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070" alt="COAREA History">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title">Our Journey</h2>
+                <p>The Indian real estate sector experienced rapid expansion in the early 2010s. To address the lack of representation for professionals, NAR India was formed in 2008, followed by the establishment of COAREA in 2011.</p>
+                <p>From just <strong>4 founding members</strong>, COAREA has grown into a prestigious body of <strong>50+ TNRERA-registered professionals</strong>, including brokers, consultants, and property experts, making it the most credible network in the region.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-navy">
+        <div class="container">
+            <h2 class="section-title">Our Mission & Advocacy</h2>
+            <p class="section-p">COAREA is committed to building a professional, ethical, and sustainable real estate ecosystem.</p>
+            
+            <div class="mission-flex">
+                <div class="mission-box">
+                    <h4>Core Objectives</h4>
+                    <ul>
+                        <li>Protecting the interests of real estate brokers.</li>
+                        <li>Acting as a collective voice before RERA and government bodies.</li>
+                        <li>Promoting accountability and ethical business practices.</li>
                     </ul>
-                </nav>
-                <a href="#" class="cta-btn-nav">
-                    <span>Join the Network</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-        </header>
-
-
-
-<section class="sub-hero" style="background: linear-gradient(rgba(0,51,128,0.8), rgba(0,26,51,0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069');">
-    <div>
-        <h1>Our Story & Mission</h1>
-        <p style="letter-spacing: 2px; text-transform:uppercase; font-size: 14px; color:var(--accent-gold); font-weight: 600;">The Definitive Voice of Coimbatore Real Estate</p>
-    </div>
-</section>
-
-<section class="about-detail">
-    <div class="about-grid">
-        <div class="about-text">
-            <h2>Setting the Blueprint for Excellence.</h2>
-            <p>
-                The Coimbatore Association of Realtors (COAREA) is a not-for-profit professional body dedicated to empowering, representing, and elevating real estate professionals across <strong>Coimbatore, Tirupur, Nilgiris, Erode, Salem, and neighbouring regions</strong>. 
-            </p>
-            <p>
-                As the <strong>official Coimbatore Chapter of NAR India</strong>, we are part of the apex national organization representing the interests of real estate professionals across the country.
-            </p>
-            <p>
-                From just <strong>4 founding members</strong>, COAREA has grown into a prestigious body of <strong>50+ TNRERA-registered professionals</strong>, making it one of the most credible networks in the region.
-            </p>
+                </div>
+                <div class="mission-box">
+                    <h4>Industry Challenges We Tackle</h4>
+                    <ul>
+                        <li>Representing brokers in policy-making.</li>
+                        <li>Managing increasing regulatory compliance.</li>
+                        <li>Addressing delays or non-payment of commissions.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="about-image-container">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070" alt="COAREA Professionalism">
-        </div>
-    </div>
-</section>
+    </section>
 
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Professional Growth</h2>
+                    <p>Knowledge and innovation are essential for a successful career. We provide our members with:</p>
+                    <div style="margin-top: 20px;">
+                        <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Training & Skill Development</h4>
+                        <p style="font-size: 0.95rem;">Real Estate Laws, RERA Regulations, and Digital Marketing strategies.</p>
+                        
+                        <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Networking Opportunities</h4>
+                        <p style="font-size: 0.95rem;">Exclusive "Let’s Connect" events with Grade ‘A’ developers and PAN-India collaborations.</p>
+                    </div>
+                </div>
+                <div class="about-text" style="background: var(--light-bg); padding: 40px; border-radius: 12px;">
+                    <h2 class="section-title" style="font-size: 1.8rem;">Leadership & Excellence</h2>
+                    <p>COAREA is guided by a highly experienced Governing Body and Executive Committee, comprising professionals with over a decade of industry expertise.</p>
+                    <p>Their leadership ensures transparency, strategic vision, and professional governance across the association.</p>
+                    <a href="contact.html" class="cta-btn-nav" style="display: inline-block; margin-top: 20px; text-decoration: none; background: var(--primary-blue); color: white; padding: 12px 25px; border-radius: 5px;">
+                        Join the Community
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer style="background: var(--dark-blue); color: #ccc; text-align: center; padding: 20px 0;">
+        <p>&copy; 2026 COAREA. All rights reserved. | Designed by Creative Advs Web Team</p>
+    </footer>
 </body>
 </html>
