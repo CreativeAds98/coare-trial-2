@@ -1117,6 +1117,38 @@
 .reveal.active .team-member:nth-child(3),
 .reveal.active .event-card:nth-child(3) { transition-delay: 0.4s; }
 
+
+
+
+
+/* --- SCROLL TO TOP BUTTON --- */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: 2px solid var(--accent-gold); /* Gold border for prestige */
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1001;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    transform: translateY(-5px);
+}
+
+.scroll-top-btn i {
+    font-size: 20px;
+}
+
     /* =========================================================================================================
    THE MAIN INDEX PAGE CONTENT STYLES START HERE
    ========================================================================================================= */
